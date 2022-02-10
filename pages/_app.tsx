@@ -25,9 +25,11 @@ Builder.register('insertMenu', {
 Builder.register('insertMenu', {
   name: 'Shopify Products Components',
   items: [
+  
     { name: 'ProductGrid' },
     { name: 'ProductBox' },
     { name: 'ProductView' },
+   
   ],
 })
 
@@ -43,6 +45,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Layout pageProps={pageProps}>
+       
         <Component {...pageProps} />
       </Layout>
     </>

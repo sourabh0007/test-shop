@@ -60,7 +60,7 @@ const ProductBox: React.FC<Props> = ({
         (variant.size === size || !size) && (variant.color === color || !color)
       )
     })
-
+    console.log(variant.id);
     if (variant.id !== newVariant?.id) {
       setVariant(newVariant)
     }
@@ -106,6 +106,7 @@ const ProductBox: React.FC<Props> = ({
           }}
         />
       )}
+    
       <Grid gap={4} columns={[1, 2]}>
         <div>
           <div

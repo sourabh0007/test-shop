@@ -1,0 +1,163 @@
+.banner{
+    font-size:20px;
+    color:#fff;
+    position:relative;
+}
+.banner p{
+    font-size: 1.25em;
+    padding-top:15px
+}
+.banner h1{
+    font-size: 3.9em;
+    line-height: 1em;
+    margin-top: 15px;
+}
+.banner video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    
+}
+.bannercontent{
+     position:relative;
+     overflow:hidden;
+}
+
+.logo>div{
+    display:block !important;
+    height:91px;
+}
+.logo{
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top:90px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-right: -20px;
+    margin-left: -20px;
+}
+.fadeInDown{
+    animation-name: fadeInDown;
+    padding: 10px;
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.fadeInDown li{
+  padding:5px;
+}
+  
+    /*
+    position:absolute; 
+    margin-top:10px;
+    left: 50%; x
+    transform: translate( -50%); */
+
+.fadeInDown a{
+    text-decoration:none !important;
+    color:#0F1620;
+}
+.fadeInDown ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup {
+    padding:2rem 0;
+    background:rgba(9,28,43, .9);
+    display: block;
+    position:relative;
+    margin-top:30px;
+    max-width:900px;
+    margin:30px auto 0;
+    border-radius: 40px 40px 0 0;
+  }
+  .signup h2 {
+    margin-bottom:5px;
+    font-size:2rem;
+
+    
+  }
+  .signup a {
+    color:#4ffcc6;
+    text-decoration:none;
+  }
+  .signup h2, .signup p{
+    color:#fff;
+    margin:0;
+    padding:0;
+  }
+ .signup p {margin-bottom:20px;font-size:1.15rem;}
+
+.signup form {
+    display:flex;
+
+    .col {
+      .button {
+        margin-top: 0 !important;
+        background: red;
+        border-color: red;
+        color:#000;
+      }
+    }
+  
+  }
+  .signup form .col input, .signup form .col textarea,.signup form .col select {
+    border-color:#fff;
+    &:hover, &:focus {
+      border-color:red;
+    }
+  }
+ 
+.labelToggle{
+    position:relative;
+    padding:0 0.5rem;
+}
+.labelToggle label{
+    position:absolute;
+    color:black;
+    
+}
+.signup input{
+  border: none;
+  padding: 1.25rem 0.75rem 0.25rem 0.7rem;
+  font-size: 1.25rem;
+  color: #333;
+  width: 100%;
+  height: 48px;
+  line-height: 43px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+}
+.signup label{
+  position: absolute;
+  top: 0.25rem;
+  left: 1.35rem;
+  line-height: .75rem;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05rem;
+}
+@media(max-width: 767px){
+.signup form{
+  display:block;
+}
+}

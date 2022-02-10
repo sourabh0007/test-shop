@@ -1,0 +1,19 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-right: -20px;
+    margin-left: -20px;
+}
+.row>div{
+    padding: 0 30px 30px;
+    background: #fff;
+    border-radius: 30px;
+    text-align: center;
+    border: 10px solid #233f55;
+
+}
+.row>img{
+    height:auto;
+    width:100%
+}

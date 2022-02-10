@@ -6,9 +6,11 @@ import { Link, ImageCarousel,LoadingDots } from '@components/ui'
 import { getPrice } from '@lib/shopify/storefront-data-hooks/src/utils/product'
 import {useMemo, useState } from 'react'
 import { Grid} from '@theme-ui/components'
-import Button from '../../components_anatomy/Button'
-import { useAddItemToCart } from '@lib/shopify/storefront-data-hooks'
+import Button from './Button'
+import { useAddItemToCart, useCartCount } from '@lib/shopify/storefront-data-hooks'
 import { useUI } from '@components/ui/context'
+import Image from 'next/image'
+import 'bootstrap/dist/css/bootstrap.css'
 import {
   prepareVariantsWithOptions,
   prepareVariantsImages
@@ -43,6 +45,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   
   const [loading, setLoading] = useState(false)
   const addItem = useAddItemToCart()
+  
+ 
   const { openSidebar } = useUI()
   const variants = useMemo(
     () => prepareVariantsWithOptions(product?.variants),
@@ -61,48 +65,27 @@ const ProductCard: React.FC<ProductCardProps> = ({
   }
 
   return (
-    <Card
-      sx={{
-        maxWidth: [700, imgWidth || 540],
-        p: 3,
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <Link href={`/product/${handle}/`}>
-        <div sx={{ flexGrow: 1 }}>
-          <ImageCarousel
-            currentSlide={product.images ? product.images.length - 1 : 0}
-            width={imgWidth}
-            height={imgHeight}
-            priority={imgPriority}
-            loading={imgLoading}
-            layout={imgLayout}
-            sizes={imgSizes}
-            alt={product.title}
-            images={
-              product.images.length ? product.images : [{
-                src: `https://via.placeholder.com/${imgWidth}x${imgHeight}`,
-              }]
-            }
-          />
+    <div className='col col-sm-6 col-md-4'>
+     
+        <div className='image_holder'>
+        <Image
+        loading={imgLoading}
+        src={product.images[0].src}
+        width={imgWidth}
+        height={imgHeight}
+        />
+          
         </div>
-        <div sx={{ textAlign: 'center' }}>
-          <Themed.h2 sx={{ mt: 4, mb: 0, fontSize: 14 }}>
-            {product.title}
-          </Themed.h2>
-          <Text sx={{ fontSize: 12, mb: 2 }}>{price}</Text>
-        </div>
-      </Link>
+        <div className='productTitle'><h4>{product.title}</h4></div>
       <Button
             name="add-to-cart"
             disabled={loading}
             onClick={addToCart}
           >
-            Add to Cart {loading && <LoadingDots />}
+            Add to Cart {price}{loading && <LoadingDots />}
       </Button>
          
-    </Card>
+    </div>
   )
 }
 

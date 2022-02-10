@@ -1,12 +1,18 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import React from 'react'
 import { jsx } from 'theme-ui'
 import { FC, useEffect, useState } from 'react'
 import { LoadingDots } from '@components/ui'
 import { Grid } from '@theme-ui/components'
 import { ProductCardProps } from '@components/common/ProductCard'
-import { ProductCardDemo, ProductCard } from '@components/common'
-
+import { ProductCardDemo } from '@components/common'
+import ProductCard from 'components_anatomy/ProductCard'
+import styles from './ProductGrid.module.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import { useUI } from '@components/ui/context'
+import Button from '../../components_anatomy/Button'
+import { useAddItemToCart, useCartCount } from '@lib/shopify/storefront-data-hooks'
 import {
   getCollection,
   getProduct,
@@ -37,7 +43,7 @@ export const ProductGrid: FC<ProductGridProps> = ({
 }) => {
   const [products, setProducts] = useState(initialProducts || [])
   const [loading, setLoading] = useState(false)
-
+  const { openSidebar } = useUI()
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true)
@@ -75,9 +81,13 @@ export const ProductGrid: FC<ProductGridProps> = ({
   const ProductComponent: any = process.env.IS_DEMO
     ? ProductCardDemo
     : ProductCard
-
+    const itemCount = useCartCount()
   return (
-    <Grid gap={2} width={['100%', '40%', '24%']}>
+    <>
+    <div className={styles.row} style={{  padding: 20 }}>
+    <Button onClick={openSidebar}>View Cart ({itemCount}) & Checkout</Button>
+    </div>
+      <div className={styles.row}>
       {products.slice(offset, limit).map((product, i) => (
         <ProductComponent
           key={String(product.id) + i}
@@ -85,6 +95,7 @@ export const ProductGrid: FC<ProductGridProps> = ({
           product={product}
         />
       ))}
-    </Grid>
+      </div>
+      </>
   )
 }

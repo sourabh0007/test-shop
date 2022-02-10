@@ -41,7 +41,7 @@ const Layout: React.FC<{ pageProps: any }> = ({ children, pageProps }) => {
           const siteSeoInfo = data?.siteInformation
           return (
             <ManagedUIContext key={data?.id} siteSettings={siteSettings}>
-              <Head seoInfo={siteSeoInfo || seoConfig} />
+               <Head seoInfo={siteSeoInfo || seoConfig} />
               <InnerLayout
                 themeName={data?.theme || 'base'}
                 colorOverrides={colorOverrides}
@@ -77,7 +77,7 @@ const InnerLayout: React.FC<{
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
+     
       <div
         sx={{
           margin: `0 auto`,

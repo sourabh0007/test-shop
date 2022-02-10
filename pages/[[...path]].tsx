@@ -11,17 +11,17 @@ import builderConfig from '@config/builder'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
 import { resolveBuilderContent } from '@lib/resolve-builder-content'
-
 builder.init(builderConfig.apiKey)
 import '../blocks/ProductGrid/ProductGrid.builder'
 import '../blocks/CollectionView/CollectionView.builder'
+import Footer from '../components_anatomy/Footer'
 import { useThemeUI } from '@theme-ui/core'
 import { Link } from '@components/ui'
 import { Themed } from '@theme-ui/mdx'
 import { getLayoutProps } from '@lib/get-layout-props'
 import { useAddItemToCart } from '@lib/shopify/storefront-data-hooks'
 import { useUI } from '@components/ui/context'
-
+import HeaderBanner from '../components_anatomy/HeaderBanner'
 const isProduction = process.env.NODE_ENV === 'production'
 
 export async function getStaticProps({
@@ -78,6 +78,7 @@ export default function Path({
 
   const { title, description, image } = page?.data! || {}
   return (
+
     <div>
       {title && (
         <NextSeo
@@ -101,6 +102,7 @@ export default function Path({
           }}
         />
       )}
+       <HeaderBanner/>
       <BuilderComponent
         options={{ includeRefs: true } as any}
         model="page"
@@ -125,7 +127,9 @@ export default function Path({
         }}
         {...(page && { content: page })}
       />
+      <Footer/>
     </div>
+    
   )
 }
 
