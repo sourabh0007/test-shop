@@ -26,13 +26,14 @@
     display:inline-block;
     margin:5px;
 
-    &.social {
+
+  }
+
+    .social {
       font-size:1.65em;
       vertical-align: middle;
       margin:2px;
     }
-
-  }
   
   .footerSocial a {
     padding:5px;
@@ -47,9 +48,6 @@
   .socialshare li {
     display: inline-block;
 
-
-
-   
   }
   .facebook .button { 
       background: #3B5998;
@@ -115,6 +113,3 @@
     width: 1px;
 }
 
-.footer li{
-  margin:3px;
-}
