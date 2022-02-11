@@ -1,7 +1,7 @@
 .footer {
     padding:3rem 0 10rem;
     color:#fff;
-  text-align:center;
+    text-align:center;
   }
   .footer a {
     color:#fff;
@@ -18,15 +18,10 @@
     list-style:none;
     padding:0;
     margin:0;
-
- 
-
   }
   .footerSocial li {
     display:inline-block;
     margin:5px;
-
-
   }
 
     .social {
