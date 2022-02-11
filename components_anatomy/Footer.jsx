@@ -22,7 +22,7 @@ return(<footer className={styles.footer}>
     </div>
     </div>
     <div className={styles.row}>
-    <div className={styles.col,styles.text-center}>
+    <div className={styles.col,styles.textcenter}>
     <p id="copyright" className={styles.small}>© Copyright 2022&nbsp;RunnerCity - All Rights Reserved</p>
     <p><a href="/pages/privacy">Privacy Policy</a> | <a href="/pages/terms">Terms</a> | <a href="#inquire" className="open-popup-link">Get in Touch</a></p>
     </div>
