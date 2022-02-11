@@ -1,6 +1,7 @@
 .footer {
     padding:3rem 0 10rem;
     color:#fff;
+  text-align:center;
   }
   .footer a {
     color:#fff;
@@ -112,4 +113,8 @@
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.footer li{
+  margin:3px;
 }
